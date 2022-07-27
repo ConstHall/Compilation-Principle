@@ -1,0 +1,41 @@
+(* TypeMismatchedException *)
+MODULE Test;
+    (* 计算阶乘 *)
+	PROCEDURE Factorial;
+		VAR n ,result: BOOLEAN;
+	BEGIN
+        result := 1;
+		Read(n);
+        IF n = 0 THEN 
+            result := 1;
+		END
+		WHILE n >= 1 DO
+			result := n * result;
+			n := n - 1
+		END;
+		Write(result); WriteLn
+	END Factorial;
+
+	(* 计算两数之和与两数之差 *)
+	PROCEDURE AddSub;
+	TYPE
+		res = INTEGER;
+		sum = RECORD
+			a, b : INTEGER;
+		minus = RECORD
+			c, d : INTEGER;
+		END;
+	VAR 
+		add: ARRAY 1 OF sum;
+        sub: ARRAY 1 OF minus;
+        addres, subres: res;
+	BEGIN
+		READ(add[0].a); 
+        READ(add[0].b);
+		READ(sub[0].c); 
+        READ(sub[0].d);
+		addres := add[0].a + add[0].b;
+		subres := sub[0].c - sub[0].d;
+		Write(addres); Write(subres); WriteLn
+	END AddSub;
+END Test.

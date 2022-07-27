@@ -1,0 +1,7 @@
+Testing Procedure
+========================================================
+
+C001 A simple expression.
+Input: 9 - 3 * 2
+Expected output: 3
+Passed !

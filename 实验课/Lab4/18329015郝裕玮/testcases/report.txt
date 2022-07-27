@@ -1,0 +1,91 @@
+Testing Procedure
+========================================================
+
+C001 A simple expression.
+Input: 9 - 3 * 2
+Expected output: 3
+Passed !
+
+C002 Expression with arithmetic operations.
+Input: 2.25E+2 - (55.5 + 4 * (10 / 2) ^ 2)
+Expected output: 69.5
+Passed !
+
+C003 Expression with arithmetic operations.
+Input: 65 / 5 - 130e-1
+Expected output: 0.0
+Passed !
+
+C004 Expression with relational and logical operations.
+Input: (5 > 3) & (4 < 8) ? 15 : 16
+Expected output: 15
+Passed !
+
+C005 Predefined functions.
+Input: max(sin(0.15), cos(0.15), sin(cos(0.15)))
+Expected output: 0.98877
+Passed !
+
+C006 Predefined functions.
+Input: sin(min(12, 3 * 5, 2 + 3 ^ 2, 3.14E2))
+Expected output: -0.99999
+Passed !
+
+E001 Left parenthesis expected.
+Input: (2 + 3) ^ 3) - ((1 + 1)
+Expected output: MissingLeftParenthesisException
+Passed !
+
+E002 Right parenthesis expected.
+Input: ((2 + 3) ^ ((3 - 1) + 1)
+Expected output: MissingRightParenthesisException
+Passed !
+
+E003 Operator expected.
+Input: (1 + 2) ^ (3 - 4)  5
+Expected output: MissingOperatorException
+Passed !
+
+E004 Operand expected.
+Input: (1 + 2) ^ (3 - ) + 5
+Expected output: MissingOperandException
+Passed !
+
+E005 Divided by 0.
+Input: 4 / (12 - 3 * 4) + 1
+Expected output: DividedByZeroException
+Passed !
+
+E006 Type mismatched.
+Input: (13 < 2 * 5) + 12
+Expected output: TypeMismatchedException
+Passed !
+
+E007 Scientific Notation Error.
+Input: 4 + 10.E+5 + 1
+Expected output: IllegalDecimalException
+Passed !
+
+E008 Not a predefined identifier.
+Input: 4 + mix(5, 2) + 1
+Expected output: IllegalIdentifierException
+Passed !
+
+E009 Function call error.
+Input: sin(2, 1)
+Expected output: FunctionCallException
+Passed !
+
+E010 Function call error.
+Input: min(2.5)
+Expected output: MissingOperandException
+Passed !
+
+--------------------------------------------------------
+Statistics Report (16 test cases):
+
+	Passed case(s): 16 (100.0%)
+	Warning case(s): 0 (0.0%)
+	Failed case(s): 0 (0.0%)
+========================================================
+
